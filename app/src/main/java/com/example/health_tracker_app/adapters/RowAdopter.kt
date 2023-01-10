@@ -1,4 +1,4 @@
-package com.example.health_tracker_app
+package com.example.health_tracker_app.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,10 +6,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.health_tracker_app.R
+import com.example.health_tracker_app.RowsQuationsTab
+import com.example.health_tracker_app.fragments.QuationsFragment
 
-class RowAdopter (
+class RowAdopter(
     private val data: List<RowsQuationsTab>,
-private val listener: RecyclerViewEvent
+    private val listener: QuationsFragment
 ) : RecyclerView.Adapter<RowAdopter.ItemViewHolder>()  {
 
     //Setup variables to hold the instance of the views defined in your recyclerView item layout
