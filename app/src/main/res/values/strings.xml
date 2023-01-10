@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">health-tracker-app</string>
+
+
+    <string-array name="QuationsMenu">
+        <item>Sleep</item>
+        <item>Nutrition</item>
+        <item>Stress</item>
+        <item>Alcohol</item>
+    </string-array>
+</resources>
