@@ -1,5 +1,6 @@
 package com.example.health_tracker_app.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,11 +11,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.health_tracker_app.MainActivity
+import com.example.health_tracker_app.QuationsToAsk
 import com.example.health_tracker_app.R
 import com.example.health_tracker_app.RowsQuationsTab
 import com.example.health_tracker_app.adapters.RowAdopter
 
 class QuationsFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,10 @@ class QuationsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.activity_quations, container, false)
+
+
+        val sharedPref = requireContext().getSharedPreferences("data", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
 
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewQuations)
@@ -43,20 +50,41 @@ class QuationsFragment : Fragment() {
 
     }
     fun onItemClick(position: Int) {
+
+        val sharedPref = requireContext().getSharedPreferences("data", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
         when (position) {
             0 -> {
-                val intent = Intent(this@QuationsFragment.requireActivity(), MainActivity::class.java)
+                val intent = Intent(this@QuationsFragment.requireActivity(), QuationsToAsk::class.java)
+                editor.apply{
+                    putString("questionType", "sleep")
+                    apply()
+                }
                 requireActivity().startActivity(intent)
             }
             1 -> {
-                val intent = Intent(this@QuationsFragment.requireActivity(), MainActivity::class.java)
+                val intent = Intent(this@QuationsFragment.requireActivity(), QuationsToAsk::class.java)
+                editor.apply{
+                    putString("questionType", "nutrition")
+                    apply()
+                }
                 requireActivity().startActivity(intent)
             }
             2 -> {
-                Toast.makeText(requireContext(),"You clicked the stress button", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@QuationsFragment.requireActivity(), QuationsToAsk::class.java)
+                editor.apply{
+                    putString("questionType", "stress")
+                    apply()
+                }
+                requireActivity().startActivity(intent)
             }
             3 -> {
-                Toast.makeText(requireContext(),"You clicked the alcohol button", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@QuationsFragment.requireActivity(), QuationsToAsk::class.java)
+                editor.apply{
+                    putString("questionType", "alcohol")
+                    apply()
+                }
+                requireActivity().startActivity(intent)
             }
 
         }
