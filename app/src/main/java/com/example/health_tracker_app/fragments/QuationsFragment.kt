@@ -34,7 +34,6 @@ class QuationsFragment : Fragment() {
         val sharedPref = requireContext().getSharedPreferences("data", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
 
-
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewQuations)
 
         val listRows = ArrayList<RowsQuationsTab>()
@@ -42,17 +41,17 @@ class QuationsFragment : Fragment() {
         listRows.add(RowsQuationsTab("Nutrition", R.drawable.nutritionicon))
         listRows.add(RowsQuationsTab("Stress", R.drawable.stressicon))
         listRows.add(RowsQuationsTab("Alcohol", R.drawable.alcoholicon))
+        listRows.add(RowsQuationsTab("Alcohol", R.drawable.alcoholicon))
         recyclerView.adapter = RowAdopter(listRows, this)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         return view
-
 
     }
     fun onItemClick(position: Int) {
 
         val sharedPref = requireContext().getSharedPreferences("data", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
+
         when (position) {
             0 -> {
                 val intent = Intent(this@QuationsFragment.requireActivity(), QuationsToAsk::class.java)
@@ -89,6 +88,4 @@ class QuationsFragment : Fragment() {
 
         }
     }
-
-
 }
