@@ -8,29 +8,30 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="407dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/sleep_question_1_label"
+            android:id="@+id/question_1_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textAlignment="gravity"
             android:gravity="center"
-            android:text="Did you have trouble falling asleep or staying asleep last night?" />
+            android:text="Here is the quation"
+            android:textAlignment="gravity" />
 
         <EditText
-            android:id="@+id/sleep_question_1"
+            android:id="@+id/question_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:inputType="textAutoCorrect" />
+
         <Button
-            android:id="@+id/save_sleep_answers"
+            android:id="@+id/save_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

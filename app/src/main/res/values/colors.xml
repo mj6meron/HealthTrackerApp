@@ -9,4 +9,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blueBlack">#111f28</color>
     <color name="tanAccent">#e3cdb3</color>
+
+
+
+    <color name="a_back1">#151E11</color>
+    <color name="a_Green">#19B919</color>
+    <color name="a_blue">#0080FF</color>
+    <color name="a_lime">#A3AF9E</color>
+    <color name="a_lightBlue">#00B4FF</color>
+    <color name="a_almostBlack">#151E12</color>
+    <color name="a_darkGreen">#005900</color>
+
+
 </resources>

@@ -4,19 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#002200"
     tools:context=".MainActivity">
 
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
-        android:layout_width="406dp"
-        android:layout_height="59dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_pager_2"
-        app:layout_constraintVertical_bias="0.5" />
+        app:tabIndicatorColor="#404A3C"
+        android:background="@color/a_darkGreen"
+        app:tabSelectedTextColor="@color/a_lightBlue"
+        app:tabTextColor="@color/a_lime"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_2"
