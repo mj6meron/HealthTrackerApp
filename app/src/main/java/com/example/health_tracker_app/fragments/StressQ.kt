@@ -21,16 +21,23 @@ class StressQ : Fragment() {
     private var inputText: String = ""
     private var model = "MobileBert"
     private var delegate = 0
+
+    var resultsss = ""
+
+
     private val listener = object : TextClassificationHelper.TextResultsListener {
         @SuppressLint("NotifyDataSetChanged")
         override fun onResult(results: List<Category>, inferenceTime: Long) {
             Handler(requireContext().mainLooper).post {
                 val resultsList = results.sortedByDescending { it.score }
+                val resultString = StringBuilder()
                 for (result in resultsList) {
                     val label = result.label
                     val score = result.score
+                    resultString.append("This is $label with score of $score \n")
                     Toast.makeText(view?.context, "This is $label with score of $score", Toast.LENGTH_SHORT).show()
                 }
+                resultsss = resultString.toString()
             }
         }
         override fun onError(error: String) {
@@ -46,6 +53,7 @@ class StressQ : Fragment() {
         val view = inflater.inflate(R.layout.fragment_with_quation, container, false)
 
         val question1 = view.findViewById<TextView>(R.id.question_1_label)
+        val classfiedView = view.findViewById<TextView>(R.id.classified_ans)
         val answerField = view.findViewById<EditText>(R.id.question_1)
         val saveButton = view.findViewById<Button>(R.id.save_answer)
 
@@ -60,15 +68,7 @@ class StressQ : Fragment() {
                 saveButton.setOnClickListener {
                     inputText = answerField.text.toString()
                     classifierHelper.currentDelegate = delegate
-
-                    when (model) {
-                        "MobileBert" -> {
-                            classifierHelper.currentModel = TextClassificationHelper.WORD_VEC
-                        }
-                        "wordVector" -> {
-                            classifierHelper.currentModel = TextClassificationHelper.MOBILEBERT
-                        }
-                    }
+                    classifierHelper.currentModel = TextClassificationHelper.MOBILEBERT
                     classifierHelper.initClassifier()
                     if (inputText.isEmpty()) {
                         classifierHelper.classify("This is a default text unfortunately")
@@ -82,6 +82,8 @@ class StressQ : Fragment() {
                     val editor = sharedPref.edit()
                     editor.putString("stress_question", inputText)
                     editor.apply()
+                    
+                    classfiedView.text = resultsss
                 }
 
         return view

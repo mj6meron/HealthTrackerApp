@@ -42,6 +42,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
 
+    implementation 'org.tensorflow:tensorflow-lite-task-text:0.4.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu-delegate-plugin:0.4.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.9.0'
+
+
     // viewpager2
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     //tablayout
