@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             }
         }.attach()
 
+        val selectQuationsTab = intent.getBooleanExtra("SELECT_QUATIONS_TAB", false)
+        if (selectQuationsTab) {
+            viewPager2.setCurrentItem(1)
+        }
+
         tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
             }
