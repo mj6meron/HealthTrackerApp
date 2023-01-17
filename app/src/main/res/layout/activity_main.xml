@@ -19,7 +19,7 @@
         app:tabIndicatorColor="#404A3C"
         android:background="@color/a_darkGreen"
         app:tabSelectedTextColor="@color/a_lightBlue"
-        app:tabTextColor="@color/a_lime"
+        app:tabTextColor="@color/white"
         app:tabGravity="fill"
         app:tabMode="fixed"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />

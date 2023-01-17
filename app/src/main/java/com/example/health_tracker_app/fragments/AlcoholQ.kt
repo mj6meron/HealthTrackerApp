@@ -69,7 +69,7 @@ class AlcoholQ : Fragment() {
         val answerField = view.findViewById<EditText>(R.id.question_1)
         val saveButton = view.findViewById<Button>(R.id.save_answer)
 
-        question1.text = "How often do you drink alcohol in a week?"
+        question1.text = "Did you drink more alcohol than average yesterday?"
 
         // Create the classification helper that will do the heavy lifting
         classifierHelper = TextClassificationHelper(

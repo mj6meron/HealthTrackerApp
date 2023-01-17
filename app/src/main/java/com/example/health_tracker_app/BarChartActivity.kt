@@ -82,12 +82,5 @@ class BarChartActivity : AppCompatActivity() {
         barChart.legend.setForm(LegendForm.SQUARE)
         barChart.legend.setFormSize(10f)
 
-
-
-
-
-
-
-
     }
 }

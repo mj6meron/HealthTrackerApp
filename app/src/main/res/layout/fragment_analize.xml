@@ -7,23 +7,6 @@
     tools:context=".QuationsToAsk">
 
 
-    <TextView
-        android:id="@+id/AnalizeLabel"
-        android:layout_width="382dp"
-        android:layout_height="62dp"
-        android:gravity="center"
-        android:text="Here is your current Status"
-        android:textAlignment="gravity"
-        android:textColor="@color/blueBlack"
-        android:textSize="18dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/SleepLL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
-
     <LinearLayout
         android:id="@+id/SleepLL"
         android:layout_width="match_parent"
@@ -31,9 +14,9 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AnalizeLabel"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
         <TextView
@@ -42,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="sleep"
+            android:text="Sleep"
             android:textAlignment="gravity"
             android:textColor="@color/a_lightBlue"
             android:textSize="18dp"
@@ -54,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
@@ -66,21 +49,21 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
             android:textStyle="bold|italic" />
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/SleepLL"
+        app:layout_constraintVertical_bias="0.5"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
@@ -101,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
@@ -113,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
@@ -124,12 +107,13 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/NutritionLL"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.5">
 
         <TextView
             android:id="@+id/TitleCondition3"
@@ -149,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
@@ -161,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
@@ -172,9 +156,10 @@
         android:id="@+id/NutritionLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/statBtn"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.5"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
@@ -195,7 +180,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
@@ -207,7 +192,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="hey there"
+            android:text="please answer to see the result"
             android:textAlignment="gravity"
             android:textColor="@color/a_lime"
             android:textSize="18dp"
@@ -218,11 +203,13 @@
         android:id="@+id/statBtn"
         android:layout_width="216dp"
         android:layout_height="48dp"
-        android:text="Button"
+        android:text="Bar Chart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NutritionLL" />
+        app:layout_constraintTop_toBottomOf="@+id/NutritionLL"
+        app:layout_constraintVertical_bias="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

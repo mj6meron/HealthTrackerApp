@@ -24,16 +24,16 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         // Add a description of mental health
-        val mentalHealthDescription = "Mental health is a state of well-being in which an individual realizes his or her own abilities, can cope with the normal stresses of life, can work productively and is able to make a contribution to his or her community. See more information about mental health on Wikipedia https://en.wikipedia.org/wiki/Mental_health"
+        val mentalHealthDescription = "Mental health is a state of well-being in which an individual realizes his or her own abilities, can cope with the normal stresses of life, can work productively and is able to make a contribution to his or her community."
         view.findViewById<TextView>(R.id.text_view_mental_health_description).text = mentalHealthDescription
 
         // Add the videos
         val videoList = listOf(
-            Video(R.drawable.sleepicon, "Introduction to mental health", "https://youtu.be/-OAjfrhuwRk"),
-            Video(R.drawable.nutritionicon,"Sleep and mental health", "https://youtu.be/98V1q5k8x5E"),
-            Video(R.drawable.nutritionicon,"Nutrition and mental health", "https://youtu.be/xyQY8a-ng6g"),
-            Video(R.drawable.nutritionicon,"Stress and mental health", "https://youtu.be/DxIDKZHW3-E"),
-            Video(R.drawable.nutritionicon, "Alcohol and mental health", "https://youtu.be/hzcZd08PqSQ")
+            Video(R.drawable.videologo, "Introduction to mental health", "https://youtu.be/-OAjfrhuwRk"),
+            Video(R.drawable.videologo,"Sleep and mental health", "https://youtu.be/98V1q5k8x5E"),
+            Video(R.drawable.videologo,"Nutrition and mental health", "https://youtu.be/xyQY8a-ng6g"),
+            Video(R.drawable.videologo,"Stress and mental health", "https://youtu.be/DxIDKZHW3-E"),
+            Video(R.drawable.videologo, "Alcohol and mental health", "https://youtu.be/hzcZd08PqSQ")
         )
 
         val videoListView = view.findViewById<RecyclerView>(R.id.recycler_view_videos)

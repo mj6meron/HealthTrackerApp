@@ -68,7 +68,7 @@ class NutritionQ : Fragment() {
         val answerField = view.findViewById<EditText>(R.id.question_1)
         val saveButton = view.findViewById<Button>(R.id.save_answer)
 
-        question1.text = "Did you have some servings of fruits and vegetables today?"
+        question1.text = "Were you in peaceful mental state this week? Can you say you are free of any mental disturbance?"
 
         // Create the classification helper that will do the heavy lifting
         classifierHelper = TextClassificationHelper(

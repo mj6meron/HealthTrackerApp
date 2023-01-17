@@ -68,7 +68,7 @@ class SleepQ : Fragment() {
         val answerField = view.findViewById<EditText>(R.id.question_1)
         val saveButton = view.findViewById<Button>(R.id.save_answer)
 
-        question1.text = "Did you have trouble falling asleep or staying asleep last night?"
+        question1.text = "Did you have a good 8 hours sleep last night?"
 
         // Create the classification helper that will do the heavy lifting
         classifierHelper = TextClassificationHelper(
