@@ -71,7 +71,7 @@ class StressQ : Fragment() {
         val saveButton = view.findViewById<Button>(R.id.save_answer)
 
         question1.text =
-            "Did you have any physical symptoms of stress (such as headaches or muscle tension)?"
+            "Can you say you are in a full mental stability without stress or something similar?"
 
         // Create the classification helper that will do the heavy lifting
         classifierHelper = TextClassificationHelper(

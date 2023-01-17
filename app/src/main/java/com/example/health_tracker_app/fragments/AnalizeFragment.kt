@@ -50,6 +50,20 @@ class AnalizeFragment : Fragment() {
         val alcoholN = view.findViewById<TextView>(R.id.alcohol_negative)
         val statBtn = view.findViewById<Button>(R.id.statBtn)
 
+
+
+
+        val sleep = view.findViewById<TextView>(R.id.TitleCondition1)
+        val nutrition = view.findViewById<TextView>(R.id.TitleCondition2)
+        val stress = view.findViewById<TextView>(R.id.TitleCondition3)
+        val alcohol = view.findViewById<TextView>(R.id.TitleCondition4)
+
+        sleep.text = "Sleep" + compare(r_sleepP, r_sleepN)
+        nutrition.text = "Nutrition" + compare(r_nutritionP, r_nutritionN)
+        stress.text = "Stress" + compare(r_stressP, r_stressN)
+        alcohol.text = "Alcohol" + compare(r_alcoholP, r_alcoholN)
+
+
         stressP.text = "Positive -> $r_stressP"
         stressN.text = "Negative -> $r_stressN"
 
@@ -72,6 +86,13 @@ class AnalizeFragment : Fragment() {
         return view
     }
 
-    companion object {
+    private fun compare(p : Float, n: Float) : String {
+        return if (p > n) {
+            " is good"
+        } else if (n > p){
+            " is not good"
+        } else {
+            ""
+        }
     }
 }

@@ -29,11 +29,11 @@ class HomeFragment : Fragment() {
 
         // Add the videos
         val videoList = listOf(
-            Video(R.drawable.videologo, "Introduction to mental health", "https://youtu.be/-OAjfrhuwRk"),
-            Video(R.drawable.videologo,"Sleep and mental health", "https://youtu.be/98V1q5k8x5E"),
-            Video(R.drawable.videologo,"Nutrition and mental health", "https://youtu.be/xyQY8a-ng6g"),
-            Video(R.drawable.videologo,"Stress and mental health", "https://youtu.be/DxIDKZHW3-E"),
-            Video(R.drawable.videologo, "Alcohol and mental health", "https://youtu.be/hzcZd08PqSQ")
+            Video(R.drawable.youtube, "Introduction to mental health", "https://youtu.be/-OAjfrhuwRk"),
+            Video(R.drawable.youtube,"Sleep and mental health", "https://youtu.be/98V1q5k8x5E"),
+            Video(R.drawable.youtube,"Nutrition and mental health", "https://youtu.be/xyQY8a-ng6g"),
+            Video(R.drawable.youtube,"Stress and mental health", "https://youtu.be/DxIDKZHW3-E"),
+            Video(R.drawable.youtube, "Alcohol and mental health", "https://youtu.be/hzcZd08PqSQ")
         )
 
         val videoListView = view.findViewById<RecyclerView>(R.id.recycler_view_videos)
