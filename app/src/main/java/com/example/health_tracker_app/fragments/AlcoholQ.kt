@@ -19,9 +19,8 @@ import com.example.health_tracker_app.R
 import com.example.health_tracker_app.TextClassificationHelper
 
 
-data class ClassificationResults(val label: String, val score: Float)
 
-class StressQ : Fragment() {
+class AlcoholQ : Fragment() {
     private lateinit var classifierHelper: TextClassificationHelper
 
     private val listOfClassifiedResults = mutableListOf<ClassificationResults>()
@@ -43,16 +42,11 @@ class StressQ : Fragment() {
                 for (result in resultsList) {
                     val label = result.label
                     val score = result.score
-                    editor.putFloat("stress_$label", score)
+                    editor.putFloat("alcohol_$label", score)
                     editor.apply()
                     //val resultObj = ClassificationResults(label, score)
                     //listOfClassifiedResults.add(resultObj)
                     resultString.append("This is $label with score of $score \n")
-                    Toast.makeText(
-                        view?.context,
-                        "This is $label with score of $score",
-                        Toast.LENGTH_SHORT
-                    ).show()
                 }
                 resultsss = resultString.toString()
             }
@@ -75,8 +69,7 @@ class StressQ : Fragment() {
         val answerField = view.findViewById<EditText>(R.id.question_1)
         val saveButton = view.findViewById<Button>(R.id.save_answer)
 
-        question1.text =
-            "Did you have any physical symptoms of stress (such as headaches or muscle tension)?"
+        question1.text = "How often do you drink alcohol in a week?"
 
         // Create the classification helper that will do the heavy lifting
         classifierHelper = TextClassificationHelper(
@@ -92,29 +85,25 @@ class StressQ : Fragment() {
             classifierHelper.currentModel = TextClassificationHelper.MOBILEBERT
             classifierHelper.initClassifier()
             if (inputText.isEmpty()) {
-                classifierHelper.classify("This is a default text unfortunately")
 
                 Toast.makeText(
                     view.context,
-                    "This is a default text unfortunately",
+                    "Please say something for a result",
                     Toast.LENGTH_SHORT
                 ).show()
 
             } else {
                 classifierHelper.classify(inputText)
+                editor.putString("alcohol_question", inputText)
+                editor.apply()
+                classfiedView.text = resultsss
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                intent.putExtra("SELECT_QUATIONS_TAB", true)
+                startActivity(intent)
             }
-            editor.putString("stress_question", inputText)
-            editor.apply()
 
-            classfiedView.text = resultsss
-
-            val intent = Intent(requireContext(), MainActivity::class.java)
-            intent.putExtra("SELECT_QUATIONS_TAB", true)
-            startActivity(intent)
         }
 
         return view
     }
 }
-
-//         question1.text = "How often do you drink alcohol in a week?"

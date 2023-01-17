@@ -48,6 +48,15 @@ class AnalizeFragment : Fragment() {
         stressP.text = "Positive -> $r_stressP"
         stressN.text = "Negative -> $r_stressN"
 
+        alcoholP.text = "Positive -> $r_alcoholP"
+        alcoholN.text = "Negative -> $r_alcoholN"
+
+        nutritionP.text = "Positive -> $r_nutritionP"
+        nutritionN.text = "Negative -> $r_nutritionN"
+
+        sleepP.text = "Positive -> $r_sleepP"
+        sleepN.text = "Negative -> $r_sleepN"
+
 
 
         return view

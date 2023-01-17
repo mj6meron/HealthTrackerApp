@@ -41,7 +41,6 @@ class QuationsFragment : Fragment() {
         listRows.add(RowsQuationsTab("Nutrition", R.drawable.nutritionicon))
         listRows.add(RowsQuationsTab("Stress", R.drawable.stressicon))
         listRows.add(RowsQuationsTab("Alcohol", R.drawable.alcoholicon))
-        listRows.add(RowsQuationsTab("Alcohol", R.drawable.alcoholicon))
         recyclerView.adapter = RowAdopter(listRows, this)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         return view
