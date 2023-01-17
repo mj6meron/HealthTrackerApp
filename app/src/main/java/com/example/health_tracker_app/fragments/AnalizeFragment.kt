@@ -2,12 +2,16 @@ package com.example.health_tracker_app.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import com.example.health_tracker_app.BarChartActivity
+import com.example.health_tracker_app.MainActivity
 import com.example.health_tracker_app.R
 
 class AnalizeFragment : Fragment() {
@@ -44,6 +48,7 @@ class AnalizeFragment : Fragment() {
         val stressN = view.findViewById<TextView>(R.id.stress_negative)
         val alcoholP = view.findViewById<TextView>(R.id.alcohol_positive)
         val alcoholN = view.findViewById<TextView>(R.id.alcohol_negative)
+        val statBtn = view.findViewById<Button>(R.id.statBtn)
 
         stressP.text = "Positive -> $r_stressP"
         stressN.text = "Negative -> $r_stressN"
@@ -57,6 +62,11 @@ class AnalizeFragment : Fragment() {
         sleepP.text = "Positive -> $r_sleepP"
         sleepN.text = "Negative -> $r_sleepN"
 
+
+        statBtn.setOnClickListener {
+            val intent = Intent(requireContext(), BarChartActivity::class.java)
+            startActivity(intent)
+        }
 
 
         return view
